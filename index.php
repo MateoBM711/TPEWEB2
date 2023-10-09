@@ -21,44 +21,46 @@
     <?php
     $p1 = new stdClass();
     $p1->nombre ='Detergente Magistral 300ml';
-    $p1->imagen = 'https://acdn.mitiendanube.com/stores/001/165/255/products/limon1-5e07593c6668ba4c7e16473702767822-640-0.jpg';
+    $p1->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml"width = 200px height= 200px>';
     $p1->precio = 600.0;
     $p1->descripcion ='Detergente magistral. Rinde x5 300ml';
     $p1->categoria = 'Cocina';
 
     $p2 = new stdClass();
     $p2->nombre ='Detergente Magistral 600ml';
-    $p2->imagen = 'https://acdn.mitiendanube.com/stores/001/165/255/products/limon1-5e07593c6668ba4c7e16473702767822-640-0.jpg';
+    $p2->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml" width = 200px height= 200px>';
     $p2->precio = 1000.0;
     $p2->descripcion ='Detergente magistral. Rinde x5 600ml';
     $p2->categoria = 'Cocina';
 
     $p3 = new stdClass();
     $p3->nombre ='Detergente Magistral 900ml';
-    $p3->imagen = 'https://acdn.mitiendanube.com/stores/001/165/255/products/limon1-5e07593c6668ba4c7e16473702767822-640-0.jpg';
+    $p3->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml"width = 200px height= 200px>';
     $p3->precio = 1300.0;
     $p3->descripcion ='Detergente magistral. Rinde x5 900ml';
     $p3->categoria = 'Cocina';
+    
     
     $productosCocina = [$p1, $p2, $p3];
 
     ?>
     <article>
         <h1>Cocina</h1>
-        <?php 
+        <div class="contenedor-prod-home">
+            <?php 
             foreach($productosCocina as $producto){
-            ?>
-                <div class = "contenedor">
-                    <div class="producto">
-                        <h4><?php echo $producto->nombre?></h4>
-                        <img class="img-producto" src="C:\xampp\htdocs\WEB2\TPE\TPEWEB2\app\views\img\magistral300.jpg" alt="magistral 300ml">
-                        <p> $ <?php echo $producto->precio ?></p>
-                        <button class="btn-leerMas" id="btn-LeerMas">Leer mas</button>
-                    </div>
+                ?>
+                <div class="producto">
+                    <div class="img-producto"><?php echo $producto->imagen ?></div>
+                    <h4><?php echo $producto->nombre?></h4>
+                    <p> $ <?php echo $producto->precio ?></p>
+                    <button class="btn-leerMas" id="btn-LeerMas">Leer mas</button>
+                    <button class="btn-agregarCarrito" id="btn-agregarCarrito">Agregar al Carrito</button>
                 </div>
-            <?php  
-            }
-        ?>
+                <?php  
+                }
+                ?>
+        </div>
     </article>
     <article>
         <h1>Baño</h1>
