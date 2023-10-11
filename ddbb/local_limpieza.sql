@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2023 a las 00:59:51
+-- Tiempo de generación: 11-10-2023 a las 00:08:08
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -12,9 +12,26 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Base de datos: `local limpieza`
+-- Base de datos: `local_limpieza`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `nombre` varchar(50) NOT NULL,
+  `id_categoria` int(50) NOT NULL,
+  `img` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -22,11 +39,10 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `Cliente` (
+CREATE TABLE `cliente` (
   `dni` int(8) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  PRIMARY KEY (dni)
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -35,15 +51,11 @@ CREATE TABLE `Cliente` (
 -- Estructura de tabla para la tabla `pedido`
 --
 
-CREATE TABLE `Pedido` (
-  `num_pedido` int(11) NOT NULL,
-  `dni_cliente` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  `fecha_pedido` int(11) NOT NULL,
-  PRIMARY KEY (num_pedido)
-  FOREIGN KEY (dni_cliente) REFERENCES Cliente(dni)
-  FOREIGN KEY (id_producto) REFERENCES Producto(id)
-
+CREATE TABLE `pedido` (
+  `num_pedido` int(11) DEFAULT NULL,
+  `dni_cliente` int(11) DEFAULT NULL,
+  `id_producto` int(11) DEFAULT NULL,
+  `fecha_pedido` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -52,14 +64,16 @@ CREATE TABLE `Pedido` (
 -- Estructura de tabla para la tabla `producto`
 --
 
-CREATE TABLE `Producto` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
+CREATE TABLE `producto` (
+  `id` int(11) DEFAULT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `precio` float NOT NULL,
-  `stock` int(11) NOT NULL,
-  `sector` varchar(50) NOT NULL, 
-  PRIMARY KEY (id)
+  `precio` float DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL,
+  `id_categoria` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

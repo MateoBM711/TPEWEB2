@@ -1,53 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <h1>Limpieza Mazzola Primos</h1>
-        <nav>
-            <a href=#>Inicio</a>
-            <a href=#>Productos</a>
-            <a href=#>Carrito</a>
-            <a href=#>Log in</a>
-        </nav>
-    </header>
-    <section>
-        <span>LPM</span>
-    </section>
-    <?php
-    $p1 = new stdClass();
-    $p1->nombre ='Detergente Magistral 300ml';
-    $p1->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml"width = 200px height= 200px>';
-    $p1->precio = 600.0;
-    $p1->descripcion ='Detergente magistral. Rinde x5 300ml';
-    $p1->categoria = 'Cocina';
+<?php
+require_once '<ddbb>local_limpieza.sql';
 
-    $p2 = new stdClass();
-    $p2->nombre ='Detergente Magistral 600ml';
-    $p2->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml" width = 200px height= 200px>';
-    $p2->precio = 1000.0;
-    $p2->descripcion ='Detergente magistral. Rinde x5 600ml';
-    $p2->categoria = 'Cocina';
 
-    $p3 = new stdClass();
-    $p3->nombre ='Detergente Magistral 900ml';
-    $p3->imagen = '<img src="app\views\img\magistral300.jpg" alt="magistral 300ml"width = 200px height= 200px>';
-    $p3->precio = 1300.0;
-    $p3->descripcion ='Detergente magistral. Rinde x5 900ml';
-    $p3->categoria = 'Cocina';
-    
-    
-    $productosCocina = [$p1, $p2, $p3];
 
+function showCategorias(){
+    include_once 'templates/header.phtml';
     ?>
     <article>
-        <h1>Cocina</h1>
+        <div class = "contenedor-header-prod">
+        <span><h1>Cocina</h1></span>
+        <span><button class = "ver-mas">Ver mas</button></span>
         <div class="contenedor-prod-home">
             <?php 
             foreach($productosCocina as $producto){
@@ -56,7 +18,7 @@
                     <div class="img-producto"><?php echo $producto->imagen ?></div>
                     <h4><?php echo $producto->nombre?></h4>
                     <p> $ <?php echo $producto->precio ?></p>
-                    <button class="btn-leerMas" id="btn-LeerMas">Leer mas</button>
+                    <button class="btn-verMas" id="btn-VerMas">Ver mas</button>
                     <button class="btn-agregarCarrito" id="btn-agregarCarrito">Agregar al Carrito</button>
                 </div>
                 <?php  
@@ -75,6 +37,14 @@
 
         </ul>
     </article>
-    <?php include_once 'templates/footer.phtml';?>
-</body>
-</html>
+    <?php include_once 'templates/footer.phtml';
+}
+
+
+
+
+
+
+
+
+?>
