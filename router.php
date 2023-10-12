@@ -41,12 +41,9 @@ switch ($params[0]) {
         else{
             $controller->showProductos(); //para poder llamar sin parametros -> en la funcion showProductos($id = null)
         }
-            
-        break;
-   // case 'producto':
-    //    $controller->showProducto($id);
-    //case 'carrito':
-    //    $controller->showCarrito();
+    case 'carrito':
+        $controller = new CarritoController();
+        $controller->showCarrito();
         break;
     //case 'login':
     //    $controller->showLogin(); 

@@ -11,11 +11,9 @@ class ProductoController {
     }
     
     function showProductosbyCategoria($categoria){
-        include_once 'templates/header.template.phtml'; 
         
         $productos = $this->model->getProductosbyCategoria($categoria);
         $productoTemplate = $this->view->showProductosbyCategoria($categoria, $productos);
-        include_once 'templates/footer.template.phtml';
     }
 
 
