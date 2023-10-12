@@ -7,10 +7,10 @@ class LoginModel {
     return $db;
     }
 
-    function getLogin(){
+    function getCliente($username, $password){
         $db = $this->connect();
 
-        $query = $db->prepare('SELECT * FROM cliente');
+        $query = $db->prepare('SELECT * FROM cliente WHERE username =');
         $query->execute();
 
         $cliente = $query->fetchAll(PDO::FETCH_OBJ);

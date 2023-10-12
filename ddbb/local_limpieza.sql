@@ -40,9 +40,8 @@ CREATE TABLE `categoria` (
 --
 
 CREATE TABLE `cliente` (
-  `dni` int(8) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

@@ -1,6 +1,6 @@
 <?php
-require_once 'TPEWEB2\app\views\categorias.view.php';
-require_once 'TPEWEB2\app\models\categorias.model.php';
+require_once './app/views/categorias.view.php';
+require_once './app/models/categorias.model.php';
 class CategoriasController {
     private $model;
     private $view;
@@ -11,11 +11,8 @@ class CategoriasController {
     }
     
     function showCategorias(){
-        include_once 'templates/header.php'; 
-        
         $categorias = $this->model->getCategorias();
         $categoriasTemplate = $this->view->showCategorias($categorias);
-        include_once 'templates/footer.php';
 }
 }
 ?>

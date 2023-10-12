@@ -1,6 +1,6 @@
 <?php
-require_once 'TPEWEB2\app\views\producto.view.php';
-require_once 'TPEWEB2\app\models\producto.model.php';
+require_once './app/views/producto.view.php';
+require_once './app/models/producto.model.php';
 class ProductoController {
     private $model;
     private $view;
@@ -11,11 +11,13 @@ class ProductoController {
     }
     
     function showProductosbyCategoria($categoria){
-        include_once 'templates/header.php'; 
+        include_once 'templates/header.template.phtml'; 
         
         $productos = $this->model->getProductosbyCategoria($categoria);
         $productoTemplate = $this->view->showProductosbyCategoria($categoria, $productos);
-        include_once 'templates/footer.php';
-}
+        include_once 'templates/footer.template.phtml';
+    }
+
+
 }
 ?>

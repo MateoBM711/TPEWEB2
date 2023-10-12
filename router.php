@@ -8,8 +8,10 @@
     /Login                             showLogin(); 
 
 */
-require_once './home.php';
-
+require_once './app/controllers/inicio.controller.php';
+require_once './app/controllers/producto.controller.php';
+require_once './app/controllers/categorias.controller.php';
+require_once './app/controllers/login.controller.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -24,6 +26,7 @@ $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'inicio':
+        $controller = new InicioController();
         $controller->showInicio();
         break;
     case 'categorias':
@@ -40,22 +43,22 @@ switch ($params[0]) {
         }
             
         break;
-    case 'producto':
-        $controller->showProducto($id);
-    case 'carrito':
-        $controller->showCarrito();
+   // case 'producto':
+    //    $controller->showProducto($id);
+    //case 'carrito':
+    //    $controller->showCarrito();
         break;
-    case 'login':
-        $controller->showLogin(); 
-        break;
-    case 'auth':
-        $controller->auth();
-        break;
-    case 'logout':    
-        $controller->logout();
-        break;
-    default: 
+    //case 'login':
+    //    $controller->showLogin(); 
+    //    break;
+    //case 'auth':
+      //  $controller->auth();
+       // break;
+    //case 'logout':    
+      //  $controller->logout();
+        //break;
+    //default: 
        // showError();
-        break;
+      //  break;
 }
 ?>
