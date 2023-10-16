@@ -1,0 +1,81 @@
+<?php
+ include_once 'templates/header.template.phtml'; //si no anda, probar agregando './' antes de templates
+ 
+ foreach($categorias as $categoria) {
+     ?>
+     <article>
+         <div class = "contenedor-header-prod">
+             <span><h1><?php $categoria->nombre;?></h1></span>
+             <span><button class = "ver-mas">Ver mas</button></span>
+             <img src="<?php $categoria->img?>" alt="">
+             <div class="contenedor-prod-home">
+                 <div class="producto">
+                     <?php 
+     }
+     ?>
+  <div class="container">
+  <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <h1>.</h1>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <h1>¿Hoy que toca limpiar?</h1>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>  
+<div class="container marketing">
+
+    <div class="row">
+    <div class="col-lg-3">
+        <img src="css/img/bano.jpg" alt="cat_bano" class="bd-placeholder-img rounded-circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></img>
+        <h2 class="fw-normal">Baño</h2>
+        <p>Todo lo que necesitas para dejar tu baño brillante.</p>
+        <p><a class="btn btn-secondary" href="bano">Ver productos</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img src="css/img/cocina.jpg" alt="cat_cocina" class="bd-placeholder-img rounded-circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">Cocina</h2>
+        <p>Productos para hacer brillar tu cocina.</p>
+        <p><a class="btn btn-secondary" href="cocina">Ver productos</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img src="css/img/casa.jpg" alt="cat_bano" class="bd-placeholder-img rounded-circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></img>
+        <h2 class="fw-normal">Casa</h2>
+        <p>Todo para tu casa.</p>
+        <p><a class="btn btn-secondary" href="casa">Ver productos</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img src="css/img/jardin.jpg" alt="cat_bano" class="bd-placeholder-img rounded-circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></img>
+        <h2 class="fw-normal">Jardin</h2>
+        <p>Deja tu jardin en orden.</p>
+        <p><a class="btn btn-secondary" href="jardin">Ver productos</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+     <?php
+ include_once 'templates/footer.template.phtml';
+?>
