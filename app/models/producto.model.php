@@ -7,13 +7,11 @@ class ProductoModel {
     }
     
     
-    
-    
-    function getProductosbyCategoria($idCategoria){
+    function getProductosbyCategoria($idCategoria = null){
         $db = $this->connect();
 
-        $query = $db->prepare('SELECT p.* FROM producto p JOIN categoria c ON p.id_categoria = " . "\"" . $idCategoria . "\"');
-        $query->execute();
+        $query = $db->prepare('SELECT * FROM producto WHERE id_categoria = ?');
+        $query->execute([$idCategoria]);
 
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
 

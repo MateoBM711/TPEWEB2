@@ -11,7 +11,8 @@
 require_once './app/controllers/inicio.controller.php';
 require_once './app/controllers/producto.controller.php';
 require_once './app/controllers/categorias.controller.php';
-require_once './app/controllers/login.controller.php';
+require_once './app/controllers/login.controller.php'; 
+require_once './app/controllers/carrito.controller.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -39,23 +40,20 @@ switch ($params[0]) {
             $controller->showProductosbyCategoria($params[1]);
         }
         else{
-            $controller->showProductos(); //para poder llamar sin parametros -> en la funcion showProductos($id = null)
+            $controller->showError('404 Not Found'); 
         }
+        break;
     case 'carrito':
         $controller = new CarritoController();
         $controller->showCarrito();
         break;
-    //case 'login':
-    //    $controller->showLogin(); 
-    //    break;
-    //case 'auth':
-      //  $controller->auth();
-       // break;
-    //case 'logout':    
-      //  $controller->logout();
-        //break;
-    //default: 
-       // showError();
-      //  break;
+    case 'login':
+        $controller = new LoginController();
+        $controller->showLogin(); 
+        break;
+    case 'auth':
+            $controller = new LoginController();
+            $controller->auth(); 
+            break;
 }
 ?>

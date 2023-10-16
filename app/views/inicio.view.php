@@ -2,8 +2,8 @@
 
 class InicioView{
 
-    function showInicio() {
-        
+    function showInicio($categorias) {
+        $count = count($categorias);
         require './templates/inicio.template.phtml';
     
     }

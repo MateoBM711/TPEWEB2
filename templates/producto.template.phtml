@@ -1,8 +1,21 @@
 <?php
 include_once 'templates/header.template.phtml'; 
-
-//template del cuerpo de la pagina
-
+?>
+<div class="card-group">
+    <?php foreach($productos as $producto){
+        if ($prducto->$id_categoria == $categoria){?>
+  <div class="card">
+    <img class="card-img-top" src="../css/img/" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><?php echo $producto->nombre; ?></h5>
+      <p class="card-text"><?php echo $producto->descripcion; ?></p>
+      <p class="card-text"><small class="text-muted">$ <?php echo $producto->precio; ?></small></p>
+    </div>
+    <?php
+    }
+    }?>
+  </div>
+</div>
+<?php
 include_once 'templates/footer.template.phtml';
-
 ?>

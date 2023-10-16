@@ -52,9 +52,8 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `pedido` (
   `num_pedido` int(11) DEFAULT NULL,
-  `dni_cliente` int(11) DEFAULT NULL,
+  `username_cliente` varchar(100) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
-  `fecha_pedido` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -68,7 +67,7 @@ CREATE TABLE `producto` (
   `nombre` varchar(50) DEFAULT NULL,
   `descripcion` varchar(100) NOT NULL,
   `precio` float DEFAULT NULL,
-  `stock` int(11) DEFAULT NULL,
+  `imagen` varchar(200) DEFAULT NULL,
   `id_categoria` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;

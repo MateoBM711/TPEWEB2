@@ -1,21 +1,17 @@
 <?php
- include_once 'templates/header.template.phtml'; //si no anda, probar agregando './' antes de templates
+require_once './app/models/producto.model.php';
+ include_once 'templates/header.template.phtml';
  
  foreach($categorias as $categoria) {
-     ?>
-     <article>
-         <div class = "contenedor-header-prod">
-             <span><h1><?php $categoria->nombre;?></h1></span>
-             <span><button class = "ver-mas">Ver mas</button></span>
-             <img src="<?php $categoria->img?>" alt="">
-             <div class="contenedor-prod-home">
-                 <div class="producto">
-                     <?php 
-     }
-     ?>
-     </div>
-     <?php
-    //mas o menos asi, cambiar.
-
+    ?>
+    <article>
+        <div class = "contenedor-header-prod" action = 'productos/<?php $categoria->id_categoria?>'>
+            <span><h1><?php echo $categoria->nombre;?></h1></span>
+            <span><button class = "ver-mas">Ver mas</button></span>
+            <img src="<?php echo $categoria->img?>" alt="">
+        </div>
+    </article>
+    <?php 
+    }
  include_once 'templates/footer.template.phtml';
 ?>

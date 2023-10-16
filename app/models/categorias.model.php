@@ -10,7 +10,7 @@ class CategoriaModel {
     
     
     
-    function getCategorias(){
+    public function getCategorias(){
         $db = $this->connect();
 
         $query = $db->prepare('SELECT * FROM categoria');
