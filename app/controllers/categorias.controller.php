@@ -6,6 +6,7 @@ class CategoriasController {
     private $view;
     
     function __construct(){
+        
         $this->view = new CategoriasView();
         $this->model = new CategoriaModel(); 
     }
