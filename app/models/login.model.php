@@ -1,11 +1,11 @@
 <?php
 
 class LoginModel {
+    
     private $db;
     
-    
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;' . 'dbname=local_limpieza;charset=utf8', 'root', '');
+        $this->db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
     }
 
     function getCliente($username){

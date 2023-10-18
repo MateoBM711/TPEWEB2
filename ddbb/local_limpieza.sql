@@ -51,8 +51,7 @@ CREATE TABLE `cliente` (
 --
 
 CREATE TABLE `pedido` (
-  `num_pedido` int(11) DEFAULT NULL,
-  `username_cliente` varchar(100) DEFAULT NULL,
+  `username_cliente` varchar(200) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

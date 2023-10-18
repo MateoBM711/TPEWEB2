@@ -47,6 +47,16 @@ switch ($params[0]) {
         $controller = new CarritoController();
         $controller->showCarrito();
         break;
+    case 'add':
+        $controller = new CarritoController();
+        $controller->addProd($params[1], $params[2]); // le paso el id_producto
+        break;
+    case 'delete':
+        $controller = new CarritoController();
+        $controller->removeProd($params[1]);
+        break;
+    case 'comprar':
+
     case 'login':
         $controller = new LoginController();
         $controller->showLogin(); 
@@ -55,5 +65,6 @@ switch ($params[0]) {
             $controller = new LoginController();
             $controller->auth(); 
             break;
+
 }
 ?>

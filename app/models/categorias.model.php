@@ -3,12 +3,9 @@
 class CategoriaModel {
     
     function connect(){
-        $db = new PDO('mysql:host=localhost;' . 'dbname=local_limpieza;charset=utf8', 'root', '');
+        $db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
         return $db;
     }
-    
-    
-    
     
     public function getCategorias(){
         $db = $this->connect();

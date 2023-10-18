@@ -81,13 +81,11 @@
       margin: 3.5em auto;
     }
   }
-.contenedor-prod-home{
-    display: flex;
+.contenedor-cat-home{
+    display: -ms-inline-flexbox;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.demo-categorias{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.demo-categoria{
+  max-width: 20%;
 }

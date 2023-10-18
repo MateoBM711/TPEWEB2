@@ -1,7 +1,7 @@
 <?php
 class CategoriasView {
     function showCategorias($categorias){
-        $count = count($categorias);
+        $cantCategorias = $categorias;
         require './templates/categorias.template.phtml';
     }
 }
