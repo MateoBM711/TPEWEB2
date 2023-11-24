@@ -47,6 +47,9 @@ switch ($params[0]) {
         if (isset($params[1])) {
             $controller = new ProductoController();
             $controller->showProductobyId($params[1]);
+            if(isset($params[2])){
+                $controller->showEditarProducto($params[1]);
+            }
         } else {
             $controller->showError('404 Not Found');
         }
@@ -57,7 +60,7 @@ switch ($params[0]) {
         break;
     case 'add':
         $controller = new CarritoController();
-        $controller->addProd($params[1], $params[2]); // le paso el id_producto
+        $controller->addProd($params[1], $params[2]); 
         break;
     case 'update':
         $controller = new ProductoController();

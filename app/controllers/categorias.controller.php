@@ -6,6 +6,8 @@ class CategoriasController {
     private $view;
     
     function __construct(){
+        AuthHelper::verify();
+
         $this->view = new CategoriasView();
         $this->model = new CategoriaModel(); 
     }

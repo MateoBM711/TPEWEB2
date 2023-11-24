@@ -1,0 +1,38 @@
+<?php
+include_once 'templates/header.template.phtml';
+?>
+
+<div class="row g-3 align-items-center mt-5 mx-auto w-25">
+    <div class="col-md-4">
+    </div>
+    <form method="POST" action="update">
+        <div class="form-group">
+            <label>ID producto</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder=" Ingrese su nombre de usuario">
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder=" Ingrese su nombre de usuario">
+        </div>
+        <div class="form-group mb-3">
+            <label>Imagen</label>
+            <input type="img" class="form-control" name="img" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder=" Ingrese su nombre de usuario">
+        </div>
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder=" Ingrese su nombre de usuario">
+        </div>
+        <div class="form-group">
+            <label>ID categoria</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder=" Ingrese su nombre de usuario">
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+</div>
+<?php
+include_once 'templates/footer.template.phtml';
+?>

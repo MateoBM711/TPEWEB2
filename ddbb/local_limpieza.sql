@@ -55,7 +55,7 @@ CREATE TABLE `cliente` (
 
 
 INSERT INTO `cliente` (`username`, `password`, `rol`) VALUES
-('webadmin', '$2a$12$xexZ4dLHKwo48pzzOPVwdeIrcXeGmnPq2/LJzgKQKXM', 'admin');
+('webadmin', '$2a$12$zdgyoFLAp8d.ABIRGk3gsukuAFlu936qUBFIA34Nu5RsLkZHiL3qe', 'admin');
 
 -- --------------------------------------------------------
 
