@@ -1,20 +1,20 @@
 <?php
 
-class LoginModel {
-    
-    private $db;
-    
-    function __construct(){
-        $this->db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
+class LoginModel
+{
+
+    function connect()
+    {
+        $db = new PDO("mysql:host=localhost; dbname=local_limpieza", "root", "");
+        return $db;
     }
 
-    function getCliente($username){
+    function getCliente($username)
+    {
+        $db = $this->connect();
 
-        $query = $this->db->prepare('SELECT * FROM cliente WHERE username = ?');
+        $query = $db->prepare('SELECT * FROM cliente WHERE username = ?');
         $query->execute([$username]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
 }
-
-
-?>

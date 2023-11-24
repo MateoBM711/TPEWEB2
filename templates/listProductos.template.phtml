@@ -1,0 +1,26 @@
+<?php
+include_once 'templates/header.template.phtml';
+?>
+<div class="row mt-5 mx-auto">
+  <?php foreach ($productos as $producto) {
+    if ($producto->id_categoria == $categoria) {
+  ?>
+      <div class="col-sm-3 ">
+        <div class="card mt-5">
+          <div class="card-body shadow">
+            <img src="<?php echo $producto->imagen ?>" alt="" class="figure-img img-fluid rounded mx-auto">
+            <h5 class="card-title"><?php echo $producto->nombre; ?></h5>
+            <h5 class="card-title"> $ <?php echo $producto->precio; ?></h5>
+            <p><?php echo $producto->descripcion ?></p>
+            <a href="add/<?php echo $producto->id_categoria . "/" . $producto->id ?>" class="btn btn-primary">Agregar al carrito</a>
+            <a href="producto/<?php echo $producto->id ?>" class="btn btn-primary">Ver producto</a>
+          </div>
+        </div>
+      </div>
+  <?php
+    }
+  }  ?>
+</div>
+<?php
+include_once 'templates/footer.template.phtml';
+?>

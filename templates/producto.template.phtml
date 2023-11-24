@@ -1,25 +1,27 @@
 <?php
 include_once 'templates/header.template.phtml';
+
 ?>
 <div class="row mt-5 mx-auto">
-  <?php foreach ($productos as $producto) {
-    if ($producto->id_categoria == $categoria){
-      ?>
-    <div class="col-sm-3 ">
-      <div class="card mt-5">
-        <div class="card-body shadow">
-          <img src="<?php echo $producto->imagen ?>" alt="" class="figure-img img-fluid rounded mx-auto">
-          <h5 class="card-title"><?php echo $producto->nombre; ?></h5>
-          <h5 class="card-title"> $ <?php echo $producto->precio; ?></h5>
-          <p><?php  echo $producto->descripcion ?></p>
-          <a href="add/<?php echo $producto->id_categoria. "/" .$producto->id ?>" class="btn btn-primary">Agregar al carrito</a>
-        </div>
-      </div>
+    <div class="col-md-4">
     </div>
-  <?php
-  } 
-  }  ?>
+    <div class="col-sm-3 ">
+        <div class="card mt-5">
+            <div class="card-body shadow">
+                <img src="<?php echo $producto[0]->imagen ?>" alt="" class="figure-img img-fluid rounded mx-auto">
+                <h5 class="card-title"><?php echo $producto[0]->nombre; ?></h5>
+                <h5 class="card-title"> $ <?php echo $producto[0]->precio; ?></h5>
+                <p><?php echo $producto[0]->descripcion ?></p>
+                <a href="add/<?php echo $producto[0]->id_categoria . "/" . $producto[0]->id ?>" class="btn btn-primary">Agregar al carrito</a>
+                <?php
+                if($isAdmin){?>
+                <a href="update/<?php echo $producto->id ?>" class="btn btn-primary">Editar</a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
 </div>
+
 <?php
 include_once 'templates/footer.template.phtml';
 ?>

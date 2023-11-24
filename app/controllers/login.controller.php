@@ -23,6 +23,7 @@ class LoginController {
         }
 
         $user = $this->model->getCliente($username);
+
         if ($user && password_verify($password, $user->password)) {
             AuthHelper::login($user);
             

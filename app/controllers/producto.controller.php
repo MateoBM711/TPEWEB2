@@ -15,6 +15,16 @@ class ProductoController {
         $productos = $this->model->getProductosbyCategoria($categoria);
         $productoTemplate = $this->view->showProductosbyCategoria($categoria, $productos);
     }
+    
+    function showProductobyId($id){
+        
+        $producto = $this->model->getProductobyId($id);
+        $productoTemplate = $this->view->showProductobyId($producto);
+    }
+
+    function updateProd($nombre, $descripcion, $precio, $imagen, $id_categoria, $id){
+        $producto = $this->model->updateProd($nombre, $descripcion, $precio, $imagen, $id_categoria, $id);
+    }
 
 
 }

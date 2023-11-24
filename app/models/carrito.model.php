@@ -4,8 +4,9 @@ require './config.php';
 
 class CarritoModel {
 
-    function connect(){
-        $db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
+    function connect()
+    {
+        $db = new PDO("mysql:host=localhost; dbname=local_limpieza", "root", "" );        
         return $db;
     }
 
@@ -48,7 +49,7 @@ class CarritoModel {
     function deleteProd($id){
         $db = $this->connect();
 
-        $query = $db->prepare('DELETE FROM pedido WHERE id_producto = ? ');
+        $query = $db->prepare('DELETE FROM pedido WHERE id_producto = ?');
         $query->execute([$id]);
     }
 }

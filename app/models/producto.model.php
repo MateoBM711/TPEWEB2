@@ -1,8 +1,9 @@
 <?php
 class ProductoModel {
     
-    function connect(){
-        $db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
+    function connect()
+    {
+        $db = new PDO("mysql:host=localhost; dbname=local_limpieza", "root", "");
         return $db;
     }
     
@@ -26,6 +27,25 @@ class ProductoModel {
         $producto = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $producto;
+    }
+    
+    function getProductos(){
+        $db = $this->connect();
+
+        $query = $db->prepare('SELECT * FROM producto');
+        $query->execute();
+
+        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $productos;
+    }
+
+    function updateProd($nombre, $descripcion, $precio, $imagen, $id_categoria, $id){
+        $db = $this->connect();
+        $query = $db->prepare('UPDATE producto
+                               SET nombre = ?, descripcion = ?, precio = ?, imagen = ?, id_categoria = ? 
+                               WHERE id = ?');
+        $query->execute([$nombre, $descripcion, $precio, $imagen, $id_categoria, $id]);
     }
 }
 

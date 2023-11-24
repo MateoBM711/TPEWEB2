@@ -30,8 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `categoria` (
   `nombre` varchar(50) NOT NULL,
   `id_categoria` int(50) NOT NULL,
-  `img` varchar(50) NOT NULL
+  `img` varchar(50) NOT NULL,
+  `descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `categoria` (`nombre`, `id_categoria`, `img`, `descripcion`) VALUES
+('Cocina', 1, 'css/img/cocina.jpg', 'Productos para hacer brillar tu cocina');
+('Baño', 2, 'css/img/bano.jpg', 'Todo lo que necesitas para dejar tu baño brillante y desinfectado');
+('Casa', 3, 'css/img/casa.jpg', 'Todo para tu casa');
+('Jardin', 4, 'css/img/jardin.jpg', 'Deja tu jardin en orden');
 
 -- --------------------------------------------------------
 
@@ -41,8 +49,13 @@ CREATE TABLE `categoria` (
 
 CREATE TABLE `cliente` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(200) NOT NULL
+  `password` varchar(200) NOT NULL,
+  `rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `cliente` (`username`, `password`, `rol`) VALUES
+('webadmin', '$2a$12$xexZ4dLHKwo48pzzOPVwdeIrcXeGmnPq2/LJzgKQKXM', 'admin');
 
 -- --------------------------------------------------------
 
@@ -53,6 +66,7 @@ CREATE TABLE `cliente` (
 CREATE TABLE `pedido` (
   `username_cliente` varchar(200) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
+  `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -69,6 +83,18 @@ CREATE TABLE `producto` (
   `imagen` varchar(200) DEFAULT NULL,
   `id_categoria` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `id_categoria`) VALUES
+(1, 'Detergente Magistral', '', 799, 'css/img/magistral.jpg', 1);
+(2, 'Mr. Musculo Antigrasa', '', 649, 'css/img/antigrasa.jpg', 1);
+(3, 'Papel higienico Felpita', '', 390, 'css/img/papel-higienico.jpg', 2);
+(4, 'Shampoo Fructis', '', 399, 'css/img/shampoo.jpg', 2);
+(5, 'Cera Suiza', '', 3300, 'css/img/cera.jpg', 3);
+(6, 'Escobillon', '', 1199, 'css/img/escobillon-liso-plastico.jpg', 3);
+(7, 'Manguera', '', 11250, 'css/img/manguera.jpg', 4);
+(8, 'Limpiador Jardin', '', 1999, 'css/img/limpiador-jardin.jpg', 4);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,13 +1,16 @@
 <?php
 
-class CategoriaModel {
-    
-    function connect(){
-        $db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
+class CategoriaModel
+{
+
+    function connect()
+    {
+        $db = new PDO("mysql:host=localhost; dbname=local_limpieza", "root", "");
         return $db;
     }
-    
-    public function getCategorias(){
+
+    public function getCategorias()
+    {
         $db = $this->connect();
 
         $query = $db->prepare('SELECT * FROM categoria');
