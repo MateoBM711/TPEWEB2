@@ -47,11 +47,17 @@ switch ($params[0]) {
         if (isset($params[1])) {
             $controller = new ProductoController();
             $controller->showProductobyId($params[1]);
-            if(isset($params[2])){
-                $controller->showEditarProducto($params[1]);
-            }
         } else {
             $controller->showError('404 Not Found');
+        }
+        break;
+    case 'editar':
+        if ($params[1] == 'categoria') {
+            $controller = new CategoriasController();
+            $controller->showEditarCategoria($params[2]);
+        } else if ($params[1] == 'producto') {
+            $controller = new ProductoController();
+            $controller->showEditarProducto($params[2]);
         }
         break;
     case 'carrito':
@@ -60,11 +66,16 @@ switch ($params[0]) {
         break;
     case 'add':
         $controller = new CarritoController();
-        $controller->addProd($params[1], $params[2]); 
+        $controller->addProd($params[1], $params[2]);
         break;
     case 'update':
-        $controller = new ProductoController();
-        $controller->updateProd($params[1], $params[2], $params[3], $params[4], $params[5], $params[6]); 
+        if ($params[1] == 'categoria') {
+            $controller = new CategoriasController();
+            $controller->updateCategoria($params[2]);
+        } else if ($params[1] == 'producto') {
+            $controller = new ProductoController();
+            $controller->updateProd($params[2]);
+        }
         break;
     case 'delete':
         $controller = new CarritoController();

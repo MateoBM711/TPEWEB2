@@ -17,7 +17,6 @@ class ProductoView
     function showProductobyId($producto)
     {
         $isAdmin = $this->helper->esAdmin();
-        print_r($isAdmin);
         require './templates/producto.template.phtml';
     }
 

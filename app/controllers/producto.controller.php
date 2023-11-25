@@ -27,8 +27,13 @@ class ProductoController
         $productoTemplate = $this->view->showProductobyId($producto);
     }
 
-    function updateProd($nombre, $descripcion, $precio, $imagen, $id_categoria, $id)
+    function updateProd($id)
     {
+        $nombre = $_POST['nombre'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $imagen = $_POST['imagen'];
+        $id_categoria = $_POST['id_categoria'];
         $producto = $this->model->updateProd($nombre, $descripcion, $precio, $imagen, $id_categoria, $id);
     }
 

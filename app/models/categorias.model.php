@@ -20,4 +20,21 @@ class CategoriaModel
 
         return $categorias;
     }
+    public function getCategoriabyId($id){
+            $db = $this->connect();
+    
+            $query = $db->prepare('SELECT * FROM categoria WHERE id_categoria = ?');
+            $query->execute([$id]);
+    
+            $categoria = $query->fetchAll(PDO::FETCH_OBJ);
+    
+            return $categoria;
+    }
+    function updateCategoria($nombre, $descripcion, $imagen,$id){
+        $db = $this->connect();
+        $query = $db->prepare('UPDATE categoria
+                               SET nombre = ?, descripcion = ?, img = ? 
+                               WHERE id_categoria = ?');
+        $query->execute([$nombre, $descripcion, $imagen, $id]);
+    }
 }

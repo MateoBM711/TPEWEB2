@@ -1,22 +1,25 @@
 <?php
 require_once './app/models/producto.model.php';
-include_once 'templates/header.template.phtml';?>
+include_once 'templates/header.template.phtml'; ?>
 
-    <div class="row mt-5 mx-auto">
-<?php foreach ($categorias as $categoria) {
-        ?>
+<div class="row mt-5 mx-auto">
+    <?php foreach ($categorias as $categoria) {
+    ?>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body shadow">
                     <h5 class="card-title"><?php echo $categoria->nombre; ?></h5>
                     <img src="<?php echo $categoria->img ?>" alt="" class="figure-img img-fluid rounded mh-3">
                     <a href="productos/<?php echo $categoria->id_categoria ?>" class="btn btn-primary">Ver productos</a>
+                    <?php if ($isAdmin) { ?>
+                        <a href="editar/categoria/<?php echo $categoria->id_categoria ?>" class="btn btn-primary">Editar</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-        <?php
-}   ?>
-    </div>
+    <?php
+    }   ?>
+</div>
 <?php
-  include_once 'templates/footer.template.phtml';
-    ?>
+include_once 'templates/footer.template.phtml';
+?>
