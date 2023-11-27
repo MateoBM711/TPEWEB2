@@ -5,8 +5,9 @@ include_once 'templates/header.template.phtml';
 <div class="row g-3 align-items-center mt-5 mx-auto w-25">
     <div class="col-md-4">
     </div>
-    <form method="POST" action="update/categoria/<?php echo $categoria[0]->id_categoria?>">
-        <div class="form-group">
+    <div class="col-md-4">
+        <form method="POST" action="update/categoria/<?php echo $categoria[0]->id_categoria?>">
+            <div class="form-group">
             <label>Nombre</label>
             <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp" placeholder="<?php echo $categoria[0]->nombre?>">
         </div>
@@ -20,6 +21,9 @@ include_once 'templates/header.template.phtml';
         </div>
         <button type="submit" class="btn btn-primary mt-5">Guardar</button>
     </form>
+    </div>
+    <div class="col-md-4">
+    </div>
 </div>
 <?php
 include_once 'templates/footer.template.phtml';

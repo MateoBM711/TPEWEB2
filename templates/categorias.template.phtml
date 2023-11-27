@@ -17,6 +17,18 @@ include_once 'templates/header.template.phtml'; ?>
                 </div>
             </div>
         </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body shadow">
+                    <h5 class="card-title"><?php echo $categoria->nombre; ?></h5>
+                    <img src="<?php echo $categoria->img ?>" alt="" class="figure-img img-fluid rounded mh-3">
+                    <a href="productos/<?php echo $categoria->id_categoria ?>" class="btn btn-primary">Ver productos</a>
+                    <?php if ($isAdmin) { ?>
+                        <a href="editar/categoria/<?php echo $categoria->id_categoria ?>" class="btn btn-primary">Editar</a>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
     <?php
     }   ?>
 </div>

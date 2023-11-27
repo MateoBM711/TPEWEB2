@@ -3,10 +3,11 @@ include_once 'templates/header.template.phtml';
 ?>
 
 <div class="row g-3 align-items-center mt-5 mx-auto w-25">
-    <div class="col-md-4">
+<div class="col-md-4">
     </div>
-    <form method="POST" action="update/producto/<?php echo $producto[0]->id?>">
-        <div class="form-group">
+    <div class="col-md-4">
+        <form method="POST" action="update/producto/<?php echo $producto[0]->id?>">
+            <div class="form-group">
             <label>Nombre</label>
             <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp" placeholder="<?php echo $producto[0]->nombre?>">
         </div>
@@ -26,9 +27,12 @@ include_once 'templates/header.template.phtml';
             <label>ID categoria</label>
             <input type="number" class="form-control" name="id_categoria" aria-describedby="emailHelp" placeholder="<?php echo $producto[0]->id_categoria?>">
         </div>
-
+        
         <button type="submit" class="btn btn-primary mt-5">Guardar</button>
     </form>
+    </div>
+    <div class="col-md-4">
+    </div>
 </div>
 <?php
 include_once 'templates/footer.template.phtml';
